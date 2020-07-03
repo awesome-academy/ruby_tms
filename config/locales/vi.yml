@@ -1,2 +1,63 @@
 vi:
-
+  application:
+    _helper:
+      base_title: "Hệ thống quản lý đào tạo"
+    logged_in_user:
+      must_be_login: "Bạn phải đăng nhập"
+  shared:
+    header:
+      app_name: "Hệ thống quản lý"
+      home: "Trang chủ"
+      account: "Tài khoản"
+      profile: "Hồ sơ cá nhân"
+      setting: "Thiết lập"
+      log_out: "Đăng xuất"
+      log_in: "Đăng nhập"
+      subject: "Môn học"
+  static_pages:
+    home:
+      title: "Trang chính"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      email: "E-mail"
+      password: "Mật khẩu"
+      remember: "Ghi nhớ"
+      log_in: "Đăng nhập"
+    create:
+      invalid : "E-mail/Mật khẩu không chính xác"
+  subjects:
+    new:
+      title: "Môn học"
+      create_new_subject: "Tạo môn học mới"
+    create:
+      success_message: "Tạo một môn học mới thành công"
+    is_trainer :
+      not_permit: "Xin lỗi, bạn không có quyền"
+  activerecord:
+    attributes:
+      user:
+        name: "Tên"
+        email: "E-mail"
+        password: "Mật khẩu"
+        password_confirmation: "Xác thực mật khẩu"
+      subject:
+        name: "Tên"
+        description: "Mô tả"
+        duration: "Thời hạn"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              too_long: "quá dài (tối đa là %{count} kí tự)"
+            password:
+              too_short: "quá ngắn (tối thiểu is %{count} kí tự)"
+  errors:
+    messages:
+      blank: "không thể bị để trống"
+      invalid: "không hợp lệ"
+      taken: "đã tồn tại"
+      confirmation: "không khớp với mật khẩu"
+      not_a_number: "phải là một số"
+      greater_than_or_equal_to: "phải lớn hơn hoặc bằng %{count}"
