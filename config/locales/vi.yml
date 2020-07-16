@@ -134,6 +134,16 @@ vi:
     course_details:
       update:
         course_is_pending_or_closed: "Không thể edit do khóa học chưa bắt đầu hoặc đã đóng"
+    user_subjects:
+        index:
+          load_user: "Không tìm thấy user"
+          load_course: "Không thể tải khóa học cho người dùng này"
+          load_user_subjects: "Không thể tải danh sách môn học cho người dùng này"
+          user_not_joined_this_course: "Người dùng này không tham gia khóa học"
+        show:
+          load_user_subject: "Không thể tải môn học cho người dùng này"
+        check_subject_status:
+          not_start_yet: "Chưa khởi động"
   courses:
     show:
       not_found: "Khóa học này không tồn tại."

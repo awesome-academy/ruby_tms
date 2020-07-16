@@ -134,6 +134,16 @@ en:
     course_details:
       update:
         course_is_pending_or_closed: "Can not edit because course is pending or closed"
+    user_subjects:
+      index:
+        load_user: "Can not find users"
+        load_course: "Can not load course for this user"
+        load_user_subjects: "Can not load subjects for this user"
+        user_not_joined_this_course: "The user didn't joined this course"
+      show:
+        load_user_subject: "Can not load this subject"
+      check_subject_status:
+        not_start_yet: "Not start yet"
   courses:
     show:
       not_found: "This course is not exist."

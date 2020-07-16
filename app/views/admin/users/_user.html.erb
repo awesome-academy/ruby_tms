@@ -1,3 +1,7 @@
 <li>
-  <%= user.name %> | <%= user.role %>
+  <% unless user.trainee?%>
+    <%= user.name %> | <%= user.role %>
+  <% else %>
+    <%= link_to user.name, [:admin, @course, user, "user_subjects"] %> | <%= user.role %>
+  <% end %>
 </li>

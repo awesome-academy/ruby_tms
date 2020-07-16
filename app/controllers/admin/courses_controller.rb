@@ -25,7 +25,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def show
-    @users = @course.users.search_by_name_role.paginate(page: params[:user_page],
+    @users = @course.users.sort_by_name_role.paginate(page: params[:user_page],
       per_page: Settings.course.show.paginate.member)
   end
 
