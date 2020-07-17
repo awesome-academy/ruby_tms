@@ -1,7 +1,6 @@
 <%= provide :title, t("admin.courses.visit.title") %>
-<h3 class=""><%= t("course.visit.title") %></h3>
-<%= will_paginate %>
+<h3><%= I18n.t "admin.courses.visit.title" %></h3>
 <ul class="courses">
-  <%= render @courses %>
+  <%= render @courses || I18n.t(".no_avaiable") %>
 </ul>
-<%= will_paginate %>
+<%= will_paginate @courses %>

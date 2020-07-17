@@ -26,4 +26,8 @@ FactoryBot.define do
   trait :deleted do
     isdeleted {Course.isdeleteds[:deleted]}
   end
+
+  trait :avaiable do
+    isdeleted {Course.isdeleteds[:avaiable]}
+  end
 end
