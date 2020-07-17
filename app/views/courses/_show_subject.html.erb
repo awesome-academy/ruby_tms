@@ -9,7 +9,10 @@
       <% if s.user_subjects.check_exist(current_user.id).present? %>
         <td><%= select_tag(:user_subjects, options_for_select(statuses_generator_subject, s.user_subjects.first.status),
           class: "form-control") %></td>
-        <td><button class="btn btn-danger btn_update_subject"><%= t ".update" %></button></td>
+        <td>
+          <button class="btn btn-danger btn_update_subject" data-confirm=""><%= t ".update" %></button>
+          <%= hidden_field_tag :confirm, trainee_check_process_task_finished(s, current_user) %>
+        </td>
       <% else %>
         <td>
           <%= render "courses/create_subject_form", subject: s, course: @course %>

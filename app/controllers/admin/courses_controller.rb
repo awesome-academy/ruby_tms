@@ -27,6 +27,7 @@ class Admin::CoursesController < ApplicationController
   def show
     @users = @course.users.sort_by_name_role.paginate(page: params[:user_page],
       per_page: Settings.course.show.paginate.member)
+    @search_users = User.search_not_in_course(@course.users.ids)
   end
 
   def edit; end

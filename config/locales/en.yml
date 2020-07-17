@@ -115,6 +115,10 @@ en:
         next: "Next"
         add: "Add member"
         deleted: "This course is not exist."
+        all_subject_not_finish: "This subject is not finished yet by trainees"
+        you_sure: "Are you sure ?"
+      search_result:
+        no_user: "There are no user available"
       destroy:
         link_delete_text: "Delete this course"
         success: "Course was deleted successfully!"
@@ -174,6 +178,7 @@ en:
       next: "Next"
       add: "Add member"
       number_member: "Member: (%{number})"
+      all_task_not_finish: "All task have not finished yet. Do you want to continue ?"
     add_existing_subject:
       search_hint: "Enter subject name then press Enter!"
       h3_text: "Subjects"

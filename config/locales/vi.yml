@@ -114,7 +114,11 @@ vi:
         previous: "Trước"
         next: "Sau"
         add: "Thêm thành viên mới"
-      deleted: "Khóa học này không tồn tại."
+        deleted: "Khóa học này không tồn tại."
+        all_subject_not_finish: "Môn học này chưa được kết thúc hết bỏi các trainee"
+        you_sure: "Bạn chắc chứ ?"
+      search_result:
+        no_user: "Không có người dùng "
       destroy:
         link_delete_text: "Xóa khóa học"
         success: "Xóa khóa học thành công"
@@ -174,6 +178,7 @@ vi:
       next: "Sau"
       add: "Thêm thành viên mới"
       number_member: "Thành viên: (%{number})"
+      all_task_not_finish: "Tất cả các tác vụ đều chưa được hoàn thành. Bạn có muốn tiếp tục ?"
     add_existing_subject:
       search_hint: "Gõ tên môn học sau đó nhấn Enter!"
       h3_text: "Môn học"

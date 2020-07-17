@@ -4,13 +4,30 @@ $(document).on('turbolinks:load', function () {
       'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
     }
   });
+
+  var previous = '';
+
+  $(document).on('focus', '[name^="select_subject_status"]', function(){
+    previous = $(this).val();
+  });
+
   $(document).on('click', '[name^="select_subject_status"]', function(){
-    $(this).attr('disabled', true);
     var subject_id = ($(this).parent().find("#subject_id").val());
     var course_id = $('#course_id').val();
     var new_status = $(this).val();
     if (new_status == '')
     return;
+
+    if (new_status == 'finished'){
+      var tr = $(this).closest('tr');
+      var message = tr.find('#confirm_update_subject').val();
+      var r = confirm(message)
+    }
+
+    if (r == false){
+      $(this).val(previous);
+      return;
+    }
 
     $.ajax({
       url: '/admin/update_subject_status',
@@ -22,5 +39,6 @@ $(document).on('turbolinks:load', function () {
         course_id: course_id
       }
     });
+
   });
 });

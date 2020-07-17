@@ -20,5 +20,6 @@ class User < ApplicationRecord
   # scope:
   scope :sort_by_name_role, ->{order(:name, :role)}
   scope :search, ->(name, not_in){where "name like ? and id not in (?) ", "%#{name}%", not_in}
+  scope :search_not_in_course, ->(not_in){where "id not in (?)",not_in }
   scope :search_by_ids, ->(ids){where "id in (?)", ids}
 end
