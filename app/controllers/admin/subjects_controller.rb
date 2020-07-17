@@ -6,7 +6,7 @@ class Admin::SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new
-    @subject.tasks.new
+    @subject.tasks.build
   end
 
   def index

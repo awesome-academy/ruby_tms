@@ -10,7 +10,7 @@ class ProcessTask < ApplicationRecord
 
   def auto_update_user_subject
     f_subject = task.subject
-    f_task_ids = f_subject.tasks.ids
+    f_task_ids = f_subject.tasks_ids
     f_user_subject = UserSubject.find_by subject_id: f_subject.id, user_id: user_id
     count_process_tasks = f_task_ids.size
     count_process_tasks_finish = ProcessTask.count_finished(f_task_ids).size

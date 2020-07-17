@@ -1,6 +1,6 @@
 module SubjectsHelper
-  def new_action?
-    action_name == "new"
+  def edit_action?
+    action_name == "edit"
   end
 
   def trainee_show_subject_status

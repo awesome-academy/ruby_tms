@@ -7,9 +7,9 @@
   <%= f.label :duration %>
   <%= f.number_field :duration, class: "form-control", min: Settings.subject_form.duration.min %>
   <hr>
-  <% if new_action? %>
+  <% unless edit_action? %>
     <div class="sub_task">
-      <%= f.fields_for :tasks do |ff| %>
+      <%= f.fields_for :tasks, @subject.tasks.build do |ff| %>
         <%= render "task_fields", f: ff %>
       <% end %>
     </div>

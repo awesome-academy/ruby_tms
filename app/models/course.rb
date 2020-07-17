@@ -9,9 +9,14 @@ class Course < ApplicationRecord
   has_many :course_details, dependent: :destroy
   has_many :subjects, through: :course_details
 
+  # Delegate
+  delegate :ids, to: :users, prefix: true
+  delegate :ids, to: :subjects, prefix: true
+
   # Validate
   validates :name, presence: true, length: {maximum: Settings.course.name.max_length}
   validates :description, length: {maximum: Settings.course.name.max_length}
+
   scope :newest, ->{order created_at: :desc}
   scope :avaiable, ->{where "isdeleted = ?", Course.delete_states[:avaiable]}
 end

@@ -15,7 +15,7 @@ module CoursesHelper
     task_ids = subject.tasks.ids
     count_process_task = task_ids.size
     count_process_task_finish = current_user.process_tasks.count_finished(task_ids).size
-    count_process_task == count_process_task_finish ? '' : I18n.t("courses.show.all_task_not_finish")
+    count_process_task == count_process_task_finish ? "" : I18n.t("courses.show.all_task_not_finish")
   end
 
   def count_user course

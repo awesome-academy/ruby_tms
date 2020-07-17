@@ -21,7 +21,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.newest.avaiable.paginate(page: params[:page])
+    @courses = current_user.courses.newest.avaiable.paginate(page: params[:page])
   end
 
   def show
