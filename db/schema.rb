@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_055110) do
     t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "isdeleted", default: false
+    t.integer "isdeleted", default: 0
   end
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

@@ -17,6 +17,7 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "shoulda-matchers"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 gem "will_paginate", "3.1.7"
@@ -41,6 +42,12 @@ end
 group :development, :test do
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+end
+
+group :development, :test do
+  gem "database_cleaner"
+  gem "factory_bot_rails", require: false
+  gem "rspec-rails", "~> 4.0.0"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
