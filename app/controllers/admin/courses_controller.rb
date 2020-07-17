@@ -42,10 +42,10 @@ class Admin::CoursesController < ApplicationController
   end
 
   def destroy
-    if @course.update isdeleted: Course.delete_states[:deleted]
-      flash[:success] = t ".success"
+    if @course.update isdeleted: Course.isdeleteds[:deleted]
+      flash[:success] = t "admin.courses.destroy.success"
     else
-      flash[:danger] = t ".fail"
+      flash[:danger] = t "admin.courses.destroy.fail"
     end
     redirect_to admin_courses_path
   end
