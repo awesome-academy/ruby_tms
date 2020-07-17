@@ -20,7 +20,7 @@ class ProcessTasksController < ApplicationController
     @course = Course.find_by id: params[:course_id]
     return if @course && !@course.isdeleted?
 
-    flash[:warning] = t "courses.load_course.not_found"
+    flash[:warning] = t "process_tasks.load_course.not_found"
     redirect_to root_path
   end
 
@@ -28,7 +28,7 @@ class ProcessTasksController < ApplicationController
     @subject = Subject.find_by id: params[:subject_id]
     return if @subject
 
-    flash[:warning] = t "subjects.load_subject.not_found"
+    flash[:warning] = t "process_tasks.load_subject.not_found"
     redirect_to @course
   end
 
@@ -44,7 +44,7 @@ class ProcessTasksController < ApplicationController
     @user_subject = current_user.user_subjects.find_by subject_id: params[:subject_id]
     return if @user_subject
 
-    flash[:warning] = t "subjects.load_subject.not_found"
+    flash[:warning] = t "process_tasks.load_user_subject.not_found"
     redirect_to @course
   end
 

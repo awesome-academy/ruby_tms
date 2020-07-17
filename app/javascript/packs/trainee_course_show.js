@@ -9,7 +9,7 @@ $(document).ready(function(){
     $(this).attr('disabled', true);
     var tr = $(this).closest("tr");
     var course_id = $('#course_id').val();
-    var subject_id = tr.find('#subject_id').val();
+    var subject_id = $('#subject_id').val();
     var status = tr.find('#user_subjects').val();
 
     $.ajax({

@@ -1,21 +1,21 @@
-<% if @added_subjects.present? %>
-  <% @added_subjects.each_with_index do |s, index| %>
+<% if added_subjects.present? %>
+  <% added_subjects.each_with_index do |s, index| %>
     <%= hidden_field_tag :course_id, @course.id %>
+    <%= hidden_field_tag :subject_id, s.id %>
     <tr>
-      <%= hidden_field_tag :subject_id, s.id %>
       <th scope="row"><%= index + 1 %></th>
       <td> <%= link_to s.name, [@course, s] %> </td>
       <td><%= s.description %></td>
-      <% if s.user_subjects.present? %>
+      <% if s.user_subjects.check_exist(current_user.id).present? %>
         <td><%= select_tag(:user_subjects, options_for_select(statuses_generator_subject, s.user_subjects.first.status),
           class: "form-control") %></td>
         <td><button class="btn btn-danger btn_update_subject"><%= t ".update" %></button></td>
+      <% else %>
+        <td>
+          <%= render "courses/create_subject_form", subject: s, course: @course %>
+          <td></td>
+        </td>
       <% end %>
-      <td>
-        <% if s.user_subjects.check_exist(current_user.id).blank? %>
-          <%= render "create_subject_form", subject: s, course: @course %>
-        <% end %>
-      </td>
     </tr>
   <% end %>
 <% end %>

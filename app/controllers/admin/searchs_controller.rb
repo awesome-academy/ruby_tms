@@ -1,5 +1,6 @@
 class Admin::SearchsController < ApplicationController
   before_action :logged_in_user
+  before_action :is_trainer?
   before_action :load_course, only: %i(search_user_by_name search_subject_by_name)
 
   def search_user_by_name

@@ -27,7 +27,7 @@ end
 end
 
 3.times do |n|
-  CourseDetail.create!(status: n, course_id: 1, subject_id: n + 1)
+  CourseDetail.create!(status: 0, course_id: 1, subject_id: n + 1)
 end
 
 10.times do |n|
