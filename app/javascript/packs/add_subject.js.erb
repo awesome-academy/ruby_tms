@@ -28,6 +28,7 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '#add_subject_btn', function () {
+    $(this).attr('disabled', true);
     var indexs = [];
     $(':checkbox:checked').each(function (i) {
       indexs[i] = parseInt($(this).val());

@@ -4,9 +4,8 @@ $(document).on('turbolinks:load', function () {
       'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
     }
   });
-
-  $('[name^="select_subject_status"]').change(function (event) {
-
+  $(document).on('click', '[name^="select_subject_status"]', function(){
+    $(this).attr('disabled', true);
     var subject_id = ($(this).parent().find("#subject_id").val());
     var course_id = $('#course_id').val();
     var new_status = $(this).val();

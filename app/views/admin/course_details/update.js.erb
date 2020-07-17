@@ -1,2 +1,5 @@
 $('#show_added_subject').html('<%= j render "admin/courses/show_subject" %>');
 alert(I18n.t("admin.courses.edit_subject_status.success"));
+$('[name^="select_subject_status"]').removeAttr("disabled");
+$('#show_added_subject').removeAttr("disabled");
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_094626) do
+ActiveRecord::Schema.define(version: 2020_07_17_055110) do
 
   create_table "course_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "status", default: 0
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_094626) do
     t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "isdeleted", default: false
   end
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -90,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_094626) do
   create_table "user_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "subject_id", null: false
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["subject_id"], name: "index_user_subjects_on_subject_id"

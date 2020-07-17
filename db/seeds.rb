@@ -15,12 +15,25 @@ end
   Course.create!(name: name, description: description, status: 0, isdeleted: 0)
 end
 
-10.times do |n|
-  UserCourse.create!(user_id: n+1 , course_id: 1, role: 2)
+UserCourse.create!(user_id: 1 , course_id: 1, role: 0)
+5.times do |n|
+  UserCourse.create!(user_id: n+2 , course_id: 1, role: 2)
 end
 
 10.times do |n|
   name = Faker::Job.title
   description = "This is subject description of subject #{n}"
   Subject.create!(name: name, duration: n + 1, description: description)
+end
+
+3.times do |n|
+  CourseDetail.create!(status: n, course_id: 1, subject_id: n + 1)
+end
+
+10.times do |n|
+  3.times do |x|
+    description = "This is task description #{x + 1} of subject #{n}"
+    name = Faker::Name.name
+    Task.create!(name: name, description: description, subject_id: n + 1)
+  end
 end
