@@ -25,7 +25,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to t("admin.shared.header.course.link"), current_user.courses.first %></li>
+            <li><%= link_to t("admin.shared.header.course.link"), current_user.courses.first || root_path %></li>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -1,3 +1,3 @@
-$('#show_subject').html('<%= j render "courses/show_subject" %>')
+$('#show_subject').html('<%= j render partial: "courses/show_subject", locals: {added_subjects: @added_subjects} %>')
 $('.btn_update_subject').removeAttr("disabled");
 alert(I18n.t("user_subjects.update.success"))

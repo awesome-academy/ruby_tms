@@ -204,8 +204,8 @@ vi:
       status: "Trạng thái của môn học: %{status}"
     load_subject:
       not_found: "Môn học không tồn tại"
-    load_user_subject:
-      not_found: "Không tìm thấy trong cơ sở dữ liệu"
+    check_duration_subject:
+      expired: "Môn học đã hết hạn để cập nhật"
   tasks:
     show:
       title: "Xem một tác vụ cụ thể bên trong một môn học cụ thể"
@@ -225,14 +225,28 @@ vi:
     update:
       success: "Cập nhật môn học thành công"
       failed : "Cập nhật môn học thất bại"
+    load_course:
+      not_found: "Khóa học không tồn tại"
+    load_subject:
+      not_found: "Môn học không tồn tại"
+    load_user_subject:
+      not_found: "Không tìm thấy trong cơ sở dữ liệu"
     load_subject_within_course:
       not_found: "Môn học này không tồn tại trong khóa học hiện tại"
+    check_status_of_course:
+      message: "Khóa học đang chờ xử lý hoặc đóng bởi quản trị viên"
   process_tasks:
     update:
       success: "Cập nhật tác vụ thành công"
       failed: "Cập nhật tác vụ thất bại"
+    load_course:
+      not_found: "Khóa học không tồn tại"
     load_subject_within_course:
       not_found: "Môn học này không tồn tại trong khóa học hiện tại"
+    load_user_subject:
+      not_found: "Không tìm thấy trong cơ sở dữ liệu"
+    load_subject:
+      not_found: "Môn học không tồn tại"
     load_process_task:
       not_found: "Tác vụ này không tồn tại"
     check_status_of_course:

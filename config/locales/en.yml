@@ -36,7 +36,7 @@ en:
           new: "Make a new course"
         subject:
           link: "Subject"
-          visit: "View all course"
+          visit: "View all subjects"
           new: "Make a new subject"
       action:
         edit: "Edit"
@@ -223,18 +223,34 @@ en:
     update:
       success: "Update subject is success"
       failed : "Update subject is failed"
+    load_course:
+      not_found: "Course is not existing"
+    load_subject:
+      not_found: "Subject is not existing"
     load_subject_within_course:
       not_found: "This subject is not existing within course"
     load_user_subject:
       not_found: "Not found in database"
+    check_status_of_course:
+      message: "Course is pending or closed by admin"
+    check_status_closed_subject:
+      message: "Subject is pending or finished by admin"
+    check_duration_subject:
+      expired: "Subject is expired to update"
   process_tasks:
     update:
       success: "Update task is success"
       failed: "Update task is failed"
+    load_course:
+      not_found: "Course is not existing"
     load_subject_within_course:
       not_found: "This subject is not existing within course"
     load_process_task:
       not_found: "This task is not existing"
+    load_user_subject:
+      not_found: "Not found in database"
+    load_subject:
+      not_found: "Subject is not existing"
     check_status_of_course:
       message: "Course is pending or closed by admin"
     admin_check_status_of_subject_within_course:
