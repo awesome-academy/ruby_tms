@@ -1,5 +1,5 @@
 class Admin::UserSubjectsController < ApplicationController
-  before_action :load_course,:is_trainer?, :load_user, :load_user_subjects, only: :index
+  before_action :load_course, :is_trainer?, :load_user, :load_user_subjects, only: :index
 
   def index; end
 

@@ -4,7 +4,7 @@ class Admin::SearchsController < ApplicationController
   before_action :load_course, only: %i(search_user_by_name search_subject_by_name)
 
   def search_user_by_name
-    @search_users = User.search(params[:name], @course.users.ids)
+    @search_users = User.search(params[:name], @course.users_ids)
   end
 
   def search_subject_by_name
@@ -12,7 +12,7 @@ class Admin::SearchsController < ApplicationController
       @subjects = Subject.search_by_name params[:name]
       return if @subjects
     end
-    @subjects = Subject.by_name_without_ids params[:name], @course.subjects.ids
+    @subjects = Subject.by_name_without_ids params[:name], @course.subjects_ids
   end
 
   private

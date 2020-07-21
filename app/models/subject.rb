@@ -9,6 +9,9 @@ class Subject < ApplicationRecord
   has_many :tasks, dependent: :destroy
   accepts_nested_attributes_for :tasks
 
+  # Delegate
+  delegate :ids, to: :tasks, prefix: true
+
   # validates:
   validates :name, presence: true
   validates :description, presence: true
