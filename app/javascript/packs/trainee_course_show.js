@@ -5,6 +5,16 @@ $(document).ready(function(){
     }
   });
 
+  $(document).on('change','#user_subjects', function(e){
+    var tr = $(this).closest("tr");
+    var status = $(this).val();
+    var button = tr.find('.btn_update_subject');
+    var confirm = tr.find('#confirm').val();
+    if (status == 'finished'){
+      button.attr('data-confirm', confirm)
+    }
+  });
+
   $(document).on('click', '.btn_update_subject', function(){
     $(this).attr('disabled', true);
     var tr = $(this).closest("tr");
