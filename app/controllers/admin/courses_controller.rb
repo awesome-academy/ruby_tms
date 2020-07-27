@@ -21,7 +21,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def index
-    @courses = current_user.courses.newest.avaiable.paginate(page: params[:page])
+    @courses = Course.newest.avaiable.paginate(page: params[:page])
   end
 
   def show
@@ -66,7 +66,7 @@ class Admin::CoursesController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:id]
-    return if @course && !@course.isdeleted
+    return if @course && @course.avaiable?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path
