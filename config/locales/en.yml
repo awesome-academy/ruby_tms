@@ -103,6 +103,8 @@ en:
         fail_message: "Can not save course to user."
       visit:
         title: "Here is list of your course"
+      index:
+        no_avaiable: "No course is available"
       show:
         not_found: "This course is not exist."
         title: "Course"

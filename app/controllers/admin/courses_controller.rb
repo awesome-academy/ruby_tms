@@ -66,7 +66,7 @@ class Admin::CoursesController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:id]
-    return if @course && @course.avaiable?
+    return if @course&.avaiable?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path
