@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :load_course, :load_subject, :load_task, only: :show
 
   def show; end
@@ -8,7 +9,7 @@ class TasksController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:course_id]
-    return if @course && !@course.isdeleted?
+    return if @course&.avaiable?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path

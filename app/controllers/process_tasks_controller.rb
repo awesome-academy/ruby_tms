@@ -1,5 +1,6 @@
 class ProcessTasksController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :load_course, :check_status_of_course, :load_subject, :load_subject_within_course,
     :load_user_subject, :admin_check_status_of_subject_within_course,
     :member_check_status_of_subject_within_course, :load_process_task, only: :update
@@ -18,7 +19,7 @@ class ProcessTasksController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:course_id]
-    return if @course && !@course.isdeleted?
+    return if @course&.avaiable?
 
     flash[:warning] = t "process_tasks.load_course.not_found"
     redirect_to root_path

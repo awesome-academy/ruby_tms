@@ -1,4 +1,6 @@
 class Admin::UserSubjectsController < ApplicationController
+  before_action :authenticate_user!
+  authorize_resource
   before_action :load_course, :is_trainer?, :load_user, :load_user_subjects, only: :index
 
   def index; end
@@ -7,7 +9,7 @@ class Admin::UserSubjectsController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:course_id]
-    return if @course && !@course.isdeleted?
+    return if @course&.avaiable?
 
     flash[:warning] = t ".load_course"
     redirect_to root_path
