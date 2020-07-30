@@ -30,6 +30,7 @@ vi:
         setting: "Thiết lập"
         log_out: "Đăng xuất"
         log_in: "Đăng nhập"
+        sign_in: "Đăng ký"
         course:
           link: "Khóa học"
           visit: "Xem tất cả khóa học"

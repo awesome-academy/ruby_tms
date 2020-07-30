@@ -1,5 +1,5 @@
 class ProcessTasksController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_course, :check_status_of_course, :load_subject, :load_subject_within_course,
     :load_user_subject, :admin_check_status_of_subject_within_course,
     :member_check_status_of_subject_within_course, :load_process_task, only: :update

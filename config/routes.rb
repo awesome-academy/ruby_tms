@@ -2,10 +2,16 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
 
-    get "/home", to: "static_pages#home", as: :home
-    get "/log-in", to: "sessions#new"
-    post "/log-in", to: "sessions#create"
-    delete "/log-out", to: "sessions#destroy"
+    devise_scope :user do
+      get "/log-in", to: "devise/sessions#new"
+      post "/log-in", to: "devise/sessions#create"
+      get "/register", to: "devise/registrations#new"
+      delete "/log-out", to: "devise/sessions#destroy"
+    end
+
+    devise_for :users
+
+    get "/home", to: "static_pages#home"
 
     namespace :admin do
       get "/search_user_by_name", to: "searchs#search_user_by_name"

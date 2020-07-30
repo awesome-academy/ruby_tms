@@ -1,5 +1,5 @@
 class Admin::CoursesController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :is_trainer?, only: %i(edit update destroy)
   before_action :load_course, :load_added_subjects, only: %i(show edit update destroy)
   before_action :build_course, only: :create

@@ -1,5 +1,5 @@
 class Admin::CourseDetailsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :is_trainer?, :load_course, only: %i(create update)
   before_action :load_existing_subject_ids, only: :create
   before_action :load_subject, :check_course_status, only: :update

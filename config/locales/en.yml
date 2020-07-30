@@ -30,6 +30,7 @@ en:
         setting: "Setting"
         log_out: "Log out"
         log_in: "Log in"
+        sign_in: "Sign in"
         course:
           link: "Course"
           visit: "View all course"
