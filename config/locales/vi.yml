@@ -1,4 +1,8 @@
 vi:
+  ransack:
+    or: "hoặc"
+    predicates:
+      cont: "chứa"
   application:
     _helper:
       base_title: "Hệ thống quản lý đào tạo"
@@ -106,6 +110,14 @@ vi:
         fail_message: "Không thể lưu khóa học này"
       visit:
         title: "Tất cả khóa học"
+      index:
+        no_avaiable: "Không có khóa học nào"
+        search_course_by_name_or_by_description: "Bạn có thể tìm kiếm khóa học theo tên hoặc theo mô tả"
+        sort_course_by_name_or_by_description: "Bạn có thể sắp xếp khóa học theo tên hoặc theo mô tả hoặc cả hai "
+        sort_by_: "Sắp xếp theo %{sort_by}"
+        course_name: "tên khóa học"
+        course_description: "mô tả khóa học"
+        both_course_name_description: "bao gồm cả tên và mô tả khóa học"
       show:
         not_found: "Khóa học này không tồn tại."
         title: "Khóa học"

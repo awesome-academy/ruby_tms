@@ -4,7 +4,7 @@ class Admin::SearchsController < ApplicationController
   before_action :load_course, only: %i(search_user_by_name search_subject_by_name)
 
   def search_user_by_name
-    @search_users = User.search(params[:name], @course.users_ids)
+    @search_users = User.search_by_name_and_not_in_course(params[:name], @course.users_ids)
   end
 
   def search_subject_by_name
@@ -13,6 +13,11 @@ class Admin::SearchsController < ApplicationController
       return if @subjects
     end
     @subjects = Subject.by_name_without_ids params[:name], @course.subjects_ids
+  end
+
+  def search_course_by_name_or_description
+    @q = Course.ransack(params[:q].try(:merge, m: "or"))
+    @courses = @q.result.avaiable.paginate(page: params[:page])
   end
 
   private
