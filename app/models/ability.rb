@@ -31,15 +31,15 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     if user.present?
-      can :show, Course, id: user.courses_ids, isdeleted: Course.isdeleteds[:avaiable]
+      can :show, Course, id: user.courses_ids, deleted_at: nil
       can :show, [Subject, Task]
       can :create, UserSubject
       can :update, UserSubject, user_id: user.id
       can :update, ProcessTask, user_id: user.id
       can [:show, :update], User, id: user.id
       if user.trainer?
-        can :manage, Course, isdeleted: Course.isdeleteds[:avaiable]
-        can :read, Course, isdeleted: Course.isdeleteds[:deleted]
+        can :manage, Course, deleted_at: nil
+        can :read, Course.only_deleted
         can :manage, Subject
         can :manage, UserSubject
         can :manage, Task do |task|

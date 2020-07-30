@@ -12,7 +12,7 @@ end
 10.times do |n|
   name = Faker::Name.name
   description = "This is course description of course #{n}"
-  Course.create!(name: name, description: description, status: 0, isdeleted: 0)
+  Course.create!(name: name, description: description, status: 0)
 end
 
 UserCourse.create!(user_id: 1 , course_id: 1, role: 0)

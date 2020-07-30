@@ -23,7 +23,7 @@ class Admin::CoursesController < ApplicationController
 
   def index
     @q = Course.ransack(params[:q])
-    @courses = @q.result.avaiable.paginate(page: params[:page])
+    @courses = @q.result.without_deleted.paginate(page: params[:page])
   end
 
   def show
@@ -44,7 +44,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def destroy
-    if @course.update isdeleted: Course.isdeleteds[:deleted]
+    if @course.destroy
       flash[:success] = t "admin.courses.destroy.success"
     else
       flash[:danger] = t "admin.courses.destroy.fail"
@@ -68,7 +68,7 @@ class Admin::CoursesController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:id]
-    return if @course&.avaiable?
+    return if @course && !@course.deleted?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path
