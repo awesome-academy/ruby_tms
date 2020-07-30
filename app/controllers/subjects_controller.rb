@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_course, :load_subject, only: :show
 
   def show

@@ -1,5 +1,5 @@
 class Admin::TasksController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :is_trainer?
   before_action :load_subject, :load_task, only: %i(show edit update)
 

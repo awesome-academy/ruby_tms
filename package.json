@@ -12,8 +12,10 @@
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "rails-erb-loader": "^5.5.2",
+    "toastr": "^2.1.4",
+    "toastr2": "^3.0.0-alpha.15",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.43.0"
+    "webpack": "^4.44.0"
   },
   "version": "0.1.0",
   "devDependencies": {

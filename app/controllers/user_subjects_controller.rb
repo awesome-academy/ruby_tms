@@ -1,5 +1,5 @@
 class UserSubjectsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_course, :check_status_closed_course, :load_subject, :check_exist_of_subject_within_course,
     :check_status_closed_subject, only: %i(create update)
   before_action :load_task_ids, only: :create
