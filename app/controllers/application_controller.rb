@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |e|
     respond_to do |format|
       format.json{head :forbidden, content_type: "text/html"}
-      format.html{redirect_to main_app.root_url, notice: t "application.not_permit"}
+      format.html{redirect_to main_app.root_url, notice: t("application.not_permit")}
       format.json{head :forbidden, content_type: "text/html"}
     end
   end

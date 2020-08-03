@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get "/search_subject_by_name", to: "searchs#search_subject_by_name"
       post "/add_subject_by_name", to: "course_details#create"
       post "/update_subject_status", to: "course_details#update"
+      get "/search_course_by_name_or_description", to: "searchs#search_course_by_name_or_description"
 
       resources :subjects, except: :destroy do
           resources :tasks, only: %i(show edit update)

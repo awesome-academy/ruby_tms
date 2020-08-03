@@ -1,6 +1,31 @@
 <%= provide :title, t("admin.courses.visit.title") %>
-<h3><%= I18n.t "admin.courses.visit.title" %></h3>
-<ul class="courses">
-  <%= render @courses || I18n.t(".no_avaiable") %>
-</ul>
+<div class="row">
+  <div class="col-md-6 ">
+    <h3><i><%= I18n.t("admin.courses.index.search_course_by_name_or_by_description") %></i></h3>
+    <%= search_form_for @q, url: admin_search_course_by_name_or_description_path, remote: true do |f| %>
+      <div class="form-group">
+        <%= f.label :name_or_description_cont %>
+        <%= f.search_field :name_or_description_cont, class: "form-control" %>
+      </div>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div>
+  <h3><i><%= I18n.t("admin.courses.index.sort_course_by_name_or_by_description") %></i></h3>
+  <%= sort_link(@q, :name) do %>
+    <strong><%= I18n.t("admin.courses.index.sort_by_", sort_by: I18n.t("admin.courses.index.course_name")) %></strong>
+  <% end %>
+  <hr>
+  <%= sort_link(@q, :description) do %>
+    <strong><%= I18n.t("admin.courses.index.sort_by_", sort_by: I18n.t("admin.courses.index.course_description")) %></strong>
+  <% end %>
+   <hr>
+  <%= sort_link(@q, :description, [:name, :description], default_order: { name: "asc", description: "desc" }) do %>
+    <strong><%= I18n.t("admin.courses.index.sort_by_", sort_by: I18n.t("admin.courses.index.both_course_name_description")) %></strong>
+  <% end %>
+</div>
+
+<h3><i> <%= I18n.t "admin.courses.visit.title" %> </i></h3>
+<%= render "admin/courses/show_courses" %>
 <%= will_paginate @courses %>

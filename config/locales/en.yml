@@ -1,4 +1,8 @@
 en:
+  ransack:
+    or: "or"
+    predicates:
+      cont: "containt"
   application:
     _helper:
       base_title: "Training Management System"
@@ -108,6 +112,12 @@ en:
         title: "Here is list of your course"
       index:
         no_avaiable: "No course is available"
+        search_course_by_name_or_by_description: "You can search by course name or by course description"
+        sort_course_by_name_or_by_description: "You can sort by course name or by course description or both"
+        sort_by_: "Sort by %{sort_by}"
+        course_name: "course's name"
+        course_description: "course's description"
+        both_course_name_description: "both course'name and course's description"
       show:
         not_found: "This course is not exist."
         title: "Course"

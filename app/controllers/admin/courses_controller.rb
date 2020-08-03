@@ -22,7 +22,8 @@ class Admin::CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.newest.avaiable.paginate(page: params[:page])
+    @q = Course.ransack(params[:q])
+    @courses = @q.result.avaiable.paginate(page: params[:page])
   end
 
   def show
