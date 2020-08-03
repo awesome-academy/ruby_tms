@@ -8,6 +8,8 @@ vi:
       not_permit: "Xin lỗi, bạn không có quyền"
     is_owner:
       not_permit: "Xin lỗi, chỉ có owner mới chỉnh sửa được khóa học."
+    not_found_resource: "Không tìm thây tài nguyên"
+    not_permit: "Bạn không được phép truy cập cho hành động này"
   static_pages:
     home:
       title: "Trang chính"

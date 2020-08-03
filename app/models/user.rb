@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :user_subjects, dependent: :destroy
   has_many :subjects, through: :user_subjects
 
+  # Delegate
+  delegate :ids, to: :courses, prefix: true
+
   validates :name, presence: true
 
   # scope:

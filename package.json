@@ -15,7 +15,7 @@
     "toastr": "^2.1.4",
     "toastr2": "^3.0.0-alpha.15",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.44.0"
+    "webpack": "^4.44.1"
   },
   "version": "0.1.0",
   "devDependencies": {

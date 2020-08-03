@@ -28,7 +28,9 @@ Rails.application.routes.draw do
           resources :user_subjects, only: %i(index)
         end
       end
+
       resources :user_courses, only: :create
+      resources :course_details, only: %i(create update)
     end
 
     post "/update_process_task", to: "process_tasks#update"

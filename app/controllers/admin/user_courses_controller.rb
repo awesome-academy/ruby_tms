@@ -1,4 +1,6 @@
 class Admin::UserCoursesController < ApplicationController
+  before_action :authenticate_user!
+  authorize_resource
   before_action :load_existing_users, :load_existing_course, :is_trainer?, only: :create
 
   def create
@@ -26,7 +28,7 @@ class Admin::UserCoursesController < ApplicationController
 
   def load_existing_course
     @existing_course = Course.find_by id: params[:course_id]
-    return if @existing_course && !@existing_course.isdeleted?
+    return if @existing_course&.avaiable?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path

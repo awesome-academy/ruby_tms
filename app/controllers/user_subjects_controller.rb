@@ -1,5 +1,6 @@
 class UserSubjectsController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :load_course, :check_status_closed_course, :load_subject, :check_exist_of_subject_within_course,
     :check_status_closed_subject, only: %i(create update)
   before_action :load_task_ids, only: :create
@@ -34,7 +35,7 @@ class UserSubjectsController < ApplicationController
   def load_course
     course_id = params[:user_subject] ? params[:user_subject][:course_id] : params[:course_id]
     @course = Course.find_by id: course_id
-    return if @course && !@course.isdeleted?
+    return if @course&.avaiable?
 
     flash[:warning] = t "user_subjects.load_course.not_found"
     redirect_to @course

@@ -2,7 +2,7 @@
   <p><%= link_to course.name, [:admin,course] %></p>
   <p><%= course.description %></p>
   <p><span><%= t("admin.courses.show.status") %></span><%= course.status.humanize %></p>
-  <% if current_user.trainer?%>
+  <% if can? :destroy, course %>
 |   <%= link_to t("admin.courses.destroy.link_delete_text"), [:admin, course], method: :delete, data: {confirm: t("admin.courses.destroy.confirm")} %>
   <% end %>
 </li>

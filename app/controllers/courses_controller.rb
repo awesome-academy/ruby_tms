@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :load_course, only: :show
 
   def show
@@ -12,7 +13,7 @@ class CoursesController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:id]
-    return if @course && !@course.isdeleted?
+    return if @course&.avaiable?
 
     flash[:warning] = t "courses.load_course.not_found"
     redirect_to root_path

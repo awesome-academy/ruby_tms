@@ -1,5 +1,6 @@
 class Admin::SubjectsController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :is_trainer?
   before_action :build_subject, only: :create
   before_action :load_subject, only: %i(show edit update)

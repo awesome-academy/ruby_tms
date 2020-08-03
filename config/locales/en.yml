@@ -8,6 +8,8 @@ en:
       not_permit: "Sorry, you don't have permission"
     is_owner:
       not_permit: "Sorry, you must be the owner to edit."
+    not_found_resource: "Not found resource"
+    not_permit: "You are not permited for this action"
   static_pages:
     home:
       title: "Home"
