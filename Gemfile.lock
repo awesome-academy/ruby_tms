@@ -177,6 +177,8 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     parallel (1.19.2)
+    paranoia (2.4.2)
+      activerecord (>= 4.0, < 6.1)
     parser (2.7.1.4)
       ast (~> 2.4.1)
     polyamorous (2.3.2)
@@ -344,6 +346,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
+  paranoia (~> 2.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-controller-testing

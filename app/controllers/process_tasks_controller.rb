@@ -19,7 +19,7 @@ class ProcessTasksController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:course_id]
-    return if @course&.avaiable?
+    return if @course && !@course.deleted?
 
     flash[:warning] = t "process_tasks.load_course.not_found"
     redirect_to root_path

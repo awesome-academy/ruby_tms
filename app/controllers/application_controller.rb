@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  rescue_from CanCan::AccessDenied do |e|
+  rescue_from CanCan::AccessDenied do
     respond_to do |format|
       format.json{head :forbidden, content_type: "text/html"}
       format.html{redirect_to main_app.root_url, notice: t("application.not_permit")}
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  rescue_from ActiveRecord::RecordNotFound do |e|
+  rescue_from ActiveRecord::RecordNotFound do
     flash[:danger] = t "application.not_found_resource"
     redirect_to root_url
   end

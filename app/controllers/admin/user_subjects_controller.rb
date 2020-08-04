@@ -9,7 +9,7 @@ class Admin::UserSubjectsController < ApplicationController
 
   def load_course
     @course = Course.find_by id: params[:course_id]
-    return if @course&.avaiable?
+    return if @course && !@course.deleted?
 
     flash[:warning] = t ".load_course"
     redirect_to root_path

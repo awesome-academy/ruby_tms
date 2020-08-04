@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
+  acts_as_paranoid
+
   enum status: {pending: 0, open: 1, closed: 2}
   enum isdeleted: {avaiable: 0, deleted: 1}
 
